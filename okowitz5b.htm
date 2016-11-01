@@ -1,0 +1,125 @@
+﻿<html><head>
+
+<title>Chasing Cephalopods</title>
+<script>
+var delay = 10;
+var timerID = "";
+var change = 5;
+var y = -150;
+var x = 50;
+
+function init()
+{
+	startAnim();
+}
+
+/*functions to start and stop the animation*/
+function startAnim()
+{
+	if (timerID=="")
+	{
+		timerID = setInterval("animate()",delay);
+	}
+}
+
+function stopAnim()
+{
+	clearInterval(timerID);
+	timerID="";
+}
+
+/* may need to duplicate/adapt this for two objects*/
+function animate()
+{
+    if (y <= -150)
+    {
+    	change = 5;
+        x = -150;
+    }
+    if (y >= 450)
+    {
+    	change = -5;
+    }
+    y = y + change;
+    x = x + 5;   
+    shiftCthuhluTo(x, y, 2);
+	shiftCuddleTo(x+100, y+50, 2);
+	
+/* add 100 to the y coord for cuddlefish?*/
+
+}
+
+
+function getObj(elementID)
+{
+	return document.getElementById(elementID);
+}
+
+/*This function places a positionable object in 
+  three dimensions (x,y, and z).*/
+function shiftCthuhluTo(x,y,z)
+{
+  getObj('cthuhlu').style.left = x + "px";
+  getObj('cthuhlu').style.top = y + "px";
+  getObj('cthuhlu').style.zIndex = z;
+  getObj('uxloc').value = x;
+  getObj('uyloc').value = y;
+}
+
+function shiftCuddleTo(x,y,z)
+{
+	x += 100;
+  getObj('cuddle').style.left = x + "px";
+  getObj('cuddle').style.top = y + "px";
+  getObj('cuddle').style.zIndex = z;
+  getObj('fxloc').value = x;
+  getObj('fyloc').value = y;
+}
+
+</script>
+<style type="text/css">
+#title1 { position:absolute;  left:200px; top:80px; 
+		   z-index:3; color:maroon; font-family:sans-serif;  
+		   font-weight:bold; font-size:400%;}
+#title2 { position:absolute; left:205px; top:85px; 
+		   z-index:1; color:silver; font-family:sans-serif;  
+		   font-weight:bold; font-size:400%;}
+#cthuhlu { position:absolute; left:0px; top:-150px; z-index:2; }
+#cuddle { position:absolute; left:0px; top:-100px; z-index:3; }
+
+#controls { position:absolute; left:10px; top:10px; z-index:1; /* may need to adapt this for two objects*/
+			background:maroon; color:silver; font-family:serif; 
+			font-weight:bold; width:140px; padding:5px;}
+h1 { font-family:sans-serif; font-size:150%;}
+</style>
+</head>
+<body onload="init();">
+<div id="controls">
+<form>
+<h1>Controls</h1>
+<p>
+<input type="button" value="start" onclick="startAnim();"> 
+<input type="button" value="stop" onclick="stopAnim();">
+<br><br>
+Cthuhlu position:<br><br>
+x pos <input type="text" id="uxloc" value="0" size="5"><br><br>
+y pos <input type="text" id="uyloc" value="0" size="5"></p>
+<br><br>
+Cuddlefish position:<br><br>
+x pos <input type="text" id="fxloc" value="0" size="5"><br><br>
+y pos <input type="text" id="fyloc" value="0" size="5">
+
+
+</form>
+</div>
+<div id="title1">Chasing Cephalopods</div>
+<div id="title2">Chasing Cephalopods</div>
+<img src="Images/Cthulu.jpg" id="cthuhlu" width="110" height="150" alt="">
+<img src="Images/cephalopod1.jpg" id="cuddle" width="110" height="150" alt="">
+
+<br>
+<br>
+<A href="TanisHome.htm" target=main > Back to main page </A>
+
+</body>
+</html>

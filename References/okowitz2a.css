@@ -1,0 +1,91 @@
+﻿<!-- 
+   body {color: navy; background: azure} 
+   body.Spooky {
+	background-color:black;
+}
+body.Dreamy {
+	background-color:fuchsia;
+}
+body.Tanis {
+	background-color:maroon;
+}
+  h1.Gothic {
+	color: navy;
+	font-size: small;
+	font-family: "Franklin Gothic Demi";
+	text-align: center;
+} 
+  td {color:  gray; background: azure;padding:20 20 20 20;} 
+  p  {
+	text-indent: .5in;
+	font-size: small;
+	margin-left: 5%;
+	margin-right: 5%;
+} 
+  a  {
+	color: #808080;
+	background: azure;
+	font-weight:bold;
+	font-size:medium;
+} 
+  a:hover {color: aqua; background: blue;} 
+  a.Menu {
+	font-style:oblique;
+}
+          
+  li:hover {
+	color:orange;background:blue;
+}
+  #bullets  	 {
+  		font-weight:bolder;
+  		text-indent: 1in;
+  	}
+  #dropcap:first-letter { 
+	font-size: 2em; 
+	float: left; 
+	color: maroon; 
+}
+#mapheader div {
+	
+	padding:10px;
+}
+#mapborder {
+	border:1px solid #ccc; padding:2px; background:#eee;
+}
+#lovecraft {
+	font-family:"Copperplate Gothic Light" 
+}
+
+h1, h2, b 	{font-family:sans-serif; color:gray;}
+
+.menubar { position:relative; height:1.5em; overflow:visible;}
+
+#menubar1 { z-index:6;}
+
+#menu1 { position:absolute;	left:0px; top:0px; width:300px;}
+
+#menu2 { position:absolute; left:300px; top:0px; width:300px;}
+
+#menu3 { position:absolute; left:600px; top:0px; width:300px;}
+
+
+.menutitle {
+	background:maroon; color:silver; font-weight:bolder;
+	border: 1px solid gray; padding:0px; position:absolute; 
+	left:0px; top:0px; width:300px; height:1.15em;
+	text-indent: .2em;
+}
+
+.dropdown {
+	background:maroon; position:absolute;
+	left:0px; top:1.15em; width:300px;
+	visibility:hidden; z-index:4;
+}
+
+.menuitem {
+	position:relative; background:maroon; color:silver;
+	font-weight:bolder; border: 1px solid gray;
+	width:300px; text-indent: .5em;
+}
+
+--> 

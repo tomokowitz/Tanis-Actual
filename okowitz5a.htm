@@ -1,0 +1,111 @@
+﻿<html>
+
+<head>
+<title> Changing Style </title>
+<script>
+
+function changeTheme()
+{
+	
+	var index = selectTheme.selectedIndex;	
+	
+	var theme = selectTheme.options[index].value;
+	
+	changeBackgroundColor(theme);
+	changeFont(theme);
+	changeImage(theme);
+}
+
+function getObj(elementID)
+{
+  return document.getElementById(elementID);
+}
+
+function changeBackgroundColor(theme)
+{
+  var theNode = getObj("palate");
+  var newcolor;
+  switch(theme)
+  {
+  	case "Tanis":
+  		theNode.style.backgroundColor = "maroon" ;
+  	break;
+  	case "Lovecraft's From Beyond":
+  		theNode.style.backgroundColor = "purple";
+  	break;
+  	default:
+  		theNode.style.backgroundColor = "orange";
+  	break;
+  
+  }
+  
+}
+
+function changeFont(theme)
+{
+	var theNode = getObj("palate");
+
+	
+	switch(theme)
+	  {
+	  	case "Tanis":
+	  		theNode.style.color="white" ;
+	  	break;
+	  	case "Lovecraft's From Beyond":
+	  		theNode.style.color="silver";
+	  	break;
+	  	default:
+	  		theNode.style.color="black";
+	  	break;
+	  
+	  }
+	
+}
+
+function changeImage(theme)
+{
+	
+	switch(theme)
+	  {
+	  	case "Tanis":
+	  		pic1.src= "Images/WhereIsTanis.jpg";
+	  	break;
+	  	case "Lovecraft's From Beyond":
+	  		pic1.src= "Images/FromBeyond.jpg";
+	  	break;
+	  	default:
+	  		pic1.src= "Images/RoadsideZone.jpg";
+	  	break;
+	  
+	  }
+		
+}
+
+</script>
+
+</head>
+
+<body>
+<br>
+
+	<select name="selectTheme" >
+		<option> Tanis </option>
+		<option> Lovecraft's From Beyond </option>
+		<option> Roadside Picnic </option>
+	
+	</select>
+	<input type="button" value="Change Theme" onclick="changeTheme()">
+	<div id="palate">
+		<label id="blurb">
+			This is a sample of your theme.
+		</label>
+		<img src="Images/KeepLooking.png" width="200px" alt="" NAME="pic1" >
+		
+	</div>
+<br>
+<br>
+<A href="TanisHome.htm" target=main > Back to main page </A>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Example 11</title>
+
+<script>
+pictures = new Array(3); // elements 0..2
+var index = 0;
+pictures[0] = "Images/MythosPkr/early20FantasyAdult.jpg";
+pictures[1] = "Images/MythosPkr/early20FantasyYouth.jpg";
+pictures[2] = "Images/MythosPkr/early20ScienceAdult.jpg";
+
+function animate()
+{
+  document.pic1.src=pictures[index % 3];
+  index++;
+  setTimeout("animate()", 1000);
+}
+</script>
+</head>
+<body onload="animate();">
+<center>
+<img alt="" SRC="Images/MythosPkr/early20ScienceAdult.jpg" NAME="pic1" height=200 width=200> 
+</center>
+<p>
+<a href="js4.htm#ex11"> Go Back </a>
+</p>
+
+</body>
+</html>

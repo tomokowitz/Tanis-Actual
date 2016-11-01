@@ -1,0 +1,108 @@
+﻿<html >
+
+<head>
+Make a pull-down menu in a new file that includes selections for the other parts of the homework. 
+If you want a different sort of menu, that's OK also. But it is not OK to just have a select form element - 
+you did this already in an earlier assignment
+Your new file should be named <lastname>6.htm. For me, it would be avitabile6.htm.
+There should be links to your new page from your original start page.
+When you are finished, your email should include the links to the page where the JavaScript is located.
+Something like:
+
+http://66.195.8.98/~avitabij/homework6/avitabile6.htm
+
+ 
+<title>Untitled 1</title>
+<script src="References/browsercodelibrary.js"></script>
+<script src="References/codelibrary.js"></script>
+ <link rel="stylesheet" href="References/okowitz2a.css" type="text/css" >
+<script type="text/javascript" language="javascript">
+
+var itembg = "maroon";
+var itemcolor = "azure";
+
+var menu1url = new Array();
+menu1url[1] = "okowitzt4a.htm";
+menu1url[2] = "okowitzt3d.htm";
+menu1url[3] = "okowitzt3c.htm";
+
+var menu2url = new Array();
+menu2url[1] = "okowitzt3b.htm";
+menu2url[2] = "okowitzt4b.htm";
+
+function dropmenu(menuID) {
+	setVisibility('dropdown'+menuID,"visible");
+	menuFX(getObj('menutitle'+menuID),'over');
+}
+function hidemenu(menuID){
+	setVisibility('dropdown'+menuID,"hidden");
+	menuFX(getObj('menutitle'+menuID),'out');
+}
+
+function menuFX(thisobj,theevent){
+	if (theevent=='over'){
+		setBackground(thisobj,itembg);
+		setColor(thisobj,itemcolor);
+	}
+      else{
+		setBackground(thisobj,itemcolor);
+		setColor(thisobj,itembg);
+	}
+}
+
+function goPage(thisobj,menunum,itemnum){
+	menuFX(thisobj,"out");
+	hidemenu(menunum);	
+	window.location.href = eval("menu"+menunum+"url["+itemnum+"]");
+}
+
+</script>
+</head>
+
+<body onload="checkDOM('okowitzt6a.htm');">
+
+<!--menubar - positioned relative to the window-->
+<!--creates positioning context for menu1, menu2-->
+<!--menu1 - absolute positioned 0,0 relative to menubar-->
+<!--creates positioning context for menutitle1, dropdown1-->
+<!--menu2 - absolute positioned 150,0 relative to menubar-->
+<!--creates positioning context for menutitle2, dropdown2-->
+<div id="menubar1" class="menubar">
+  <div id="menu1" onmouseover="dropmenu('1');" 
+                  onmouseout="hidemenu('1');">
+    <div id="menutitle1" class="menutitle">Mythos Research Tools</div>
+    <div id="dropdown1" class="dropdown">
+    <!--This div contains a hidden dropdown menu.-->
+      <div class="menuitem" onmouseover="menuFX(this,'over');" 
+           onmouseout="menuFX(this,'out');" onclick="goPage(this,1,1);">
+             Tanis Slide Show</div>
+      <div class="menuitem" onmouseover="menuFX(this,'over');" 
+           onmouseout="menuFX(this,'out');" onclick="goPage(this,1,2);">
+             Genre Search Engine</div>
+      <div class="menuitem" onmouseover="menuFX(this,'over');" 
+           onmouseout="menuFX(this,'out');" onclick="goPage(this,1,3);">
+             Quick Search</div>
+    </div>
+  </div>
+  <div onmouseover="dropmenu('2');" onmouseout="hidemenu('2');" id="menu2">
+    <div id="menutitle2" class="menutitle">Math Games</div>
+    <div class="dropdown" id="dropdown2">
+    <!--This div contains a hidden dropdown menu.-->
+      <div class="menuitem" onmouseover="menuFX(this,'over');" 
+           onmouseout="menuFX(this,'out');" onclick="goPage(this,2,1);">
+        Geometry App</div>
+      <div class="menuitem" onmouseover="menuFX(this,'over');" 
+           onmouseout="menuFX(this,'out');" onclick="goPage(this,2,2);">
+        More Fun with Shapes</div>
+    </div>
+  </div>
+
+</div>
+
+<p>Move the mouse over the menu names to see the hidden drop down
+menus.</p>
+
+
+</body>
+
+</html>

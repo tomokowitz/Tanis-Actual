@@ -1,0 +1,48 @@
+﻿<html >
+
+<head>
+   <link rel="stylesheet" href="okowitz2a.css" type="text/css" >
+
+<script>
+	function average(a, b, c,answer)
+	{
+		answer.value = (parseInt(a) + parseInt(b) + parseInt(c)) / 3;
+
+	}
+	
+	function ValidYear(strYear){
+				
+				var nbrYear = parseInt(strYear);
+				//var nbrYear = parseInt(document.getElementById("txtTargetYear").innerText);
+				if( nbrYear < 1900 ){
+					alert('Whoah ... that is too old for me!  Please pick a year after 1850.');
+					}
+				else if(nbrYear > 2017){
+				alert('Dude ... that is in the future!  Far out, too far out!.');
+				}			
+				
+				answer.value=strYear;
+			}
+
+</script>
+
+
+</head>
+
+<body>
+<input type="text" name="year"onChange="ValidYear(year.value);" >
+<br>
+<input type="text" name="genre"  >
+<br>
+<input type="text" name="age">
+<br>
+
+<input type=button value="Get Average" onClick="average(year.value, genre.value, age.value, answer);">
+<br>
+<br> Average is: <input type=text name=answer size=6>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+    <title>Example 11</title>
+
+<script>
+pictures = new Array(5); // elements 0..2
+var index = 0;
+<<<<<<< HEAD
+pictures[0] = "Images/MtnsMadness.jpg";
+pictures[1] = "Images/RoadsideZone.jpg";
+pictures[2] = "Images/MythosPkr/early20ScienceAdult.jpg";
+=======
+pictures[0] = "Images/WhereIsTanis.jpg";
+pictures[1] = "Images/TANIS-MOUNTAIN-RUNNER.png";
+pictures[3] = "Images/RoadsideSplit.jpg";
+pictures[4] = "Images/Cthulu.jpg";
+
+blurbs = new Array(5);
+blurbs[0] = "Tanis, from the heat and fire, from the sand and spire, her light to bed, her darkness fled, across the sea, eternal she...";
+blurbs[1] = "Tanis	is	always	moving,	or	you’re	moving,	and	it’s	always	changing,	or	you’re changing.	";
+blurbs[2] = "What if there were somewhere else? A dreaming, maybe. A place where time didn't exist, or perhaps existed in another form?  ";
+blurbs[3] = "In 1971 the Strugatsky brothers published a novel called The Roadside Picnic. A book that has, as its central controlling idea, a zone in the countryside where strange things happen. Mysterious and dangerous artifacts are pulled out of the zone by people willing to risk contamination. ";
+blurbs[4] = "The legend of Eld Fen is old, like, Beowulf old. And rare. It's barely mentioned anywhere, and if it is, it's usually in passing. Apparently Robert W. Chambers, HP Lovecraft, and, later, August Derleth were inspired by this legend.";
+>>>>>>> origin/master
+
+function animate()
+{
+  document.pic1.src=pictures[index % 3];
+<<<<<<< HEAD
+ /* document.text1.value = "555";*/
+=======
+  document.blurb.value=blurbs[index % 3];
+>>>>>>> origin/master
+  index++;
+  setTimeout("animate()", 10000);
+}
+</script>
+</head>
+<body onload="animate();">
+<!--<body>-->
+<center>
+<img alt="" SRC="Images/MythosPkr/early20ScienceAdult.jpg" NAME="pic1" height=200 width=200> 
+<<<<<<< HEAD
+<div name="text1"> dive here </div>
+=======
+<input type="text" name="blurb">
+>>>>>>> origin/master
+</center>
+<p>
+<a href="js4.htm#ex11"> Go Back </a>
+</p>
+
+</body>
+</html>

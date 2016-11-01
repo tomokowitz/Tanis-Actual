@@ -1,0 +1,174 @@
+﻿<html>
+
+<head>
+<title>Geometry</title>
+	
+	
+	<script>
+		
+		function getShape()
+		{
+			var index = selShape.selectedIndex;
+			
+			var shape = selShape.options[index].value;
+			
+			
+			var area = getArea(shape);
+			
+			
+			var shSize;
+			
+			
+			if (size[0].checked) 
+			  { 
+			  	shSize = size[0].value; 
+			  } 
+			 else if (size[1].checked) 
+			  { 
+			  	shSize = size[1].value; 
+			  } 
+			  else 
+			  { 
+			  	shSize = size[2].value;
+			  } 
+			
+			var color="white";
+			if(cbColor.checked )
+			{
+				color = "orange";
+			}
+			var specFx;
+			var shapeFile = shape;
+			if(cbFace.checked )
+			{
+				shapeFile += "smiley";
+			}
+		
+		switch(shapeFile)
+		{	
+			case "3-4-5 triangle":
+				document.mypic.src="Images/Geometry/345triangle.jpg";
+			break;
+			case "3-4-5 trianglesmiley":
+				document.mypic.src="Images/Geometry/345triangle Smiley.jpg";
+
+			break;
+			case "square with 5-inch sides":
+			document.mypic.src="Images/Geometry/Square.jpg";
+			break;
+			case "square with 5-inch sidessmiley":
+			document.mypic.src="Images/Geometry/SquareSmiley.jpg";
+			break;
+			case "5-inch radius circle":
+			document.mypic.src="Images/Geometry/Circle.jpg";
+			break;
+			case "5-inch radius circlesmiley":
+			document.mypic.src="Images/Geometry/CircleSmiley.jpg";
+			break;
+		}
+		buildPage(shape, area, shSize, color);
+
+		}
+		function getArea(shape)
+		{
+			var area;
+			switch(shape)
+			{
+				case "3-4-5 triangle":
+					area = calcTriangle(3,4,5);
+					break;				
+				case "square with 5-inch sides":
+					area = calcSquare(5);
+					break;
+				default:
+					area = calcCircle(5);
+					break;
+			}
+			return area;
+		}
+		
+		
+		
+		/*function showShapes(shape)
+		{
+		
+		
+		}
+*/		function calcTriangle(side1, side2, side3)
+		{
+			var area;
+			var per = side1 + side2 + side3;
+			var p = per/2;
+			var prod = p * (p-side1)*(p-side2)*(p-side3);
+			area = Math.sqrt(prod);
+			return area;
+						
+		}
+		function calcSquare(side1)
+		{
+		
+			return Math.pow(side1,2);
+		}
+		function calcCircle(radius)
+		{
+		
+			return Math.PI * Math.pow(radius,2); 
+
+		}
+		
+		function buildPage(shape, area, shSize, color)
+		{
+		
+		
+			showShape=open("about:blank","showShape");
+			showShape.document.open();
+			showShape.document.write("<HTML>");
+			showShape.document.write("<HEAD>");
+			showShape.document.write("<TITLE> Your Shape's Area </TITLE>");
+			showShape.document.write("</HEAD>");
+			showShape.document.write("<BODY BGCOLOR='" + color + "'>");
+			showShape.document.write("<IMG SRC=" + document.mypic.src +" width=" + shSize + "><P>");
+			showShape.document.write("The area of this shape is " + area + "<p>");
+			showShape.document.write("<FORM>");
+			showShape.document.write("<INPUT TYPE='button' VALUE='Close' onClick=self.close();>");
+			showShape.document.write("<P>");
+			showShape.document.write("</BODY>");
+			showShape.document.write("</HTML>");
+			showShape.document.fgColor="navy";
+			showShape.document.bgColor="azure";
+			showShape.document.close();
+		}
+
+
+	</script>
+</head>
+
+<body>
+
+<p>
+<select name="selShape">
+	<option> 3-4-5 triangle </option>
+	<option> square with 5-inch sides </option>
+	<option> 5-inch radius circle </option>
+</select>
+</p>
+<div> div is here <img name="mypic" alt="" src="Images/Geometry/GoogleOrangeTriangle.jpg" width="100" ></div>
+
+<p>
+<br><input type="radio" name="size" value="30" checked="true"> small
+<br><input type="radio" name="size" value="100"> medium
+<br><input type="radio" name="size" value="250"> large
+</p>
+<p>
+<br><input type="checkbox" name="cbColor" value="color"> Click for a colored background for your shape
+<br><input type="checkbox" name="cbFace" value="smiley"> Click for a smiley face with your shape
+
+</p>
+<input type="button" value="Let 'er rip!" onclick="getShape()">
+<br>
+<br>
+<A href="TanisHome.htm" target=main > Back to main page </A>
+
+</body>
+
+</html>

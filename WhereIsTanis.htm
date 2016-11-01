@@ -1,0 +1,47 @@
+﻿<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="okowitz2a.css" type="text/css" >
+<script type="text/javascript">
+function FunctionOver(myText)
+{ 
+  document.getElementById("mapMsg").innerHTML= myText ;
+}
+</script>
+
+    
+    </head>
+    <body text="indigo" bgcolor="azure" >
+        <div>
+        
+        	Here is a map of the Olympic Pensinsula area where many Tanis-related incidents have occurred.
+        	<br> Click on the following zones of the map for more information: 
+        	<ul id="bullets">
+        		<li>Quinault/Amanda Lake,
+        		</li>
+        		<li>the Olympic National Forest,
+        		</li>
+        		<li>McNeil Island and 
+        		</li>
+        		<li>Dupont (short distance NNE of Olympia)
+        		</li>
+        	</ul>  
+        </div>        
+        <p>
+            <img SRC="Images/Puget_sound4.JPG" usemap="#pugetmap" height=500 width=800 alt="Tanis Central" >
+            <br>
+            <map name="pugetmap">
+            <area shape="rect" href="AmandaLake.htm" coords="0,50,100,150"
+                  alt="Amanda Lake" target="main" onMouseOver="FunctionOver('Amanda Lake background');">
+             <area shape="rect" href="Olympic.htm" coords="150,100,250,250"
+                  alt="Tanis Central" target="main" onMouseOver="FunctionOver('Olympia park background');">
+             
+             <area shape="rect" href="McNeilIsland.htm" coords="550,300,650,400"
+                  alt="McNeil Island" target="main" onMouseOver="FunctionOver('McNeil Island background');">
+			<area shape="rect" href="Dupont.htm" coords="575,450,650,500"
+                  alt="McNeil Island" target="main" onMouseOver="FunctionOver('Fort Nisqually background');">
+
+            </map>
+            <span id="mapMsg"></span>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>Example 11</title>
+
+<script>
+pictures = new Array(5); // elements 0..2
+var index = 0;
+pictures[0] = "Images/WhereIsTanis.jpg";
+pictures[1] = "Images/TANIS-MOUNTAIN-RUNNER.png";
+pictures[2] = "Images/TanisCanyon.jpg";
+pictures[3] = "Images/RoadsideSplit.jpg";
+pictures[4] = "Images/Cthulu.jpg";
+
+blurbs = new Array(5);
+blurbs[0] = "Tanis, from the heat and fire, from the sand and spire, her light to bed, her darkness fled, <br> across the sea, eternal she...";
+blurbs[1] = "Tanis is always moving, or you’re moving,	and	it’s always	changing, or you’re changing. ";
+blurbs[2] = "What if there were somewhere else? A dreaming, maybe. A place where time didn't exist, <br> or perhaps existed in another form?  ";
+blurbs[3] = "In 1971 the Strugatsky brothers published a novel called The Roadside Picnic. A book that has, <br> as its central controlling idea, a zone in the countryside where strange things happen. <br> Mysterious and dangerous artifacts are pulled out of the zone by people willing to risk contamination. ";
+blurbs[4] = "The legend of Eld Fen is old, like, Beowulf old. And rare. It's barely mentioned anywhere,<br> and if it is, it's usually in passing. Apparently Robert W. Chambers, HP Lovecraft, and, later,<br> August Derleth were inspired by this legend.";
+
+function animate()
+{
+  document.pic1.src=pictures[index % 5];
+  
+  lblBlurb.innerHTML = blurbs[index % 5];
+  index++;
+  setTimeout("animate()", 5000);
+}
+</script>
+</head>
+<body onload="animate();">
+<!--<body>-->
+<center>
+<img alt="" SRC="Images/KeepLooking.png" NAME="pic1" height=400 > 
+<br>
+<br>
+<label id="lblBlurb"> Keep Looking </label>
+<br>
+</center>
+<p>
+<A href="TanisHome.htm" target=main > Back to main page </A>
+
+</p>
+
+</body>
+</html>

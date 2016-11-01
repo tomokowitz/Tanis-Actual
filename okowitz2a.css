@@ -1,0 +1,58 @@
+﻿<!-- 
+   body {color: navy; background: azure} 
+   body.Spooky {
+	background-color:black;
+}
+body.Dreamy {
+	background-color:fuchsia;
+}
+body.Tanis {
+	background-color:maroon;
+}
+  h1.Gothic {
+	color: navy;
+	font-size: small;
+	font-family: "Franklin Gothic Demi";
+	text-align: center;
+} 
+  td {color:  gray; background: azure;padding:20 20 20 20;} 
+  p  {
+	text-indent: .5in;
+	font-size: small;
+	margin-left: 5%;
+	margin-right: 5%;
+} 
+  a  {
+	color: #808080;
+	background: azure;
+	font-weight:bold;
+	font-size:medium;
+} 
+  a:hover {color: aqua; background: blue;} 
+  a.Menu {
+	font-style:oblique;
+}
+          
+  li:hover {
+	color:orange;background:blue;
+}
+  #bullets  	 {
+  		font-weight:bolder;
+  		text-indent: 1in;
+  	}
+  #dropcap:first-letter { 
+	font-size: 2em; 
+	float: left; 
+	color: maroon; 
+}
+#mapheader div {
+	
+	padding:10px;
+}
+#mapborder {
+	border:1px solid #ccc; padding:2px; background:#eee;
+}
+#lovecraft {
+	font-family:"Copperplate Gothic Light" 
+}
+--> 

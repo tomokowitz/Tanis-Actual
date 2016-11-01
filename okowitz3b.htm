@@ -1,0 +1,98 @@
+﻿<html>
+
+<head>
+ <link rel="stylesheet" href="okowitz2a.css" type="text/css" >
+<script type="text/javascript">
+	function CalcPer(a,b,c,d)
+	{
+	
+	var strShapeCk = ValidMsrs(b,c,d);
+	var per;
+	if(a=="" || b =="" || c=="" || d=="")
+		{
+			alert('All fields are required.');
+		}
+		
+	else if (a!=strShapeCk){
+					alert('The dimensions you have entered for this shape are non-Euclidean.  You will now be transported to another dimension!');
+
+	}
+	else {
+			switch(a){
+				case 'Square':
+					per = Math.pow(parseInt(b),2);
+				break;
+				case 'Rectangle':
+					per = parseInt(c) * parseInt(d);
+				break;
+				default:
+					per = parseInt(b) + parseInt(c) + parseInt(d);
+				break;
+			
+			}
+			perimeter.value=per;
+		}
+		
+	}
+
+	
+	function ValidMsrs(a,b,c) {
+		var shape;
+		if(a==b && b==c){
+				shape = 'Square';
+			}
+		else if(a==b && b!=c){
+				shape = 'Rectangle';
+			}
+		else if (a != b && b != c){
+				shape = 'Triangle';
+			}
+		else {
+				shape = 'Lovecraftian';
+			}
+		return shape;
+		}
+	
+</script>
+
+</head>
+
+<body>
+
+	<p> Please choose a shape and choose sets of measurements for 3 sides:  </p>
+	<p> Shapes: Square, rectangle, triangle </p>
+	<p> Measurements: </p>
+	<p> 4, 4, 4 </p>
+	<p> 4, 4, 5 </p>
+	<p> 3, 4, 5 </p>
+	<p>
+<br>
+<p>
+<label> Enter shape here: </label>
+<input type="text" name="shape" >
+<br>
+<p>
+<label> Enter first side measurement here: </label>
+<input type="text" name="side1" >
+<br>
+<p>
+<label> Enter second side measurement here: </label>
+
+<input type="text" name="side2" >
+<br>
+<p>
+<label> Enter third side measurement here: </label>
+<input type="text" name="side3">
+<br>
+<p>
+
+<input type="button" value="Click" onclick="CalcPer(shape.value,side1.value,side2.value,side3.value)">
+<p>
+
+<br> Perimeter is: <input type=text name=perimeter size=6>
+
+<A href="okowitz1a.htm" target=main > Back to main page </A>
+
+</body>
+
+</html>
