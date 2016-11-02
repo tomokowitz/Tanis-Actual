@@ -1,14 +1,9 @@
 ﻿<html>
 
 <head>
-Add the following to your project:
-Make an XML file that contains at least 5 children of the root. Each child node is a some sort of user of your database. Each user node has at least 4 child nodes. One of the child nodes is a unique ID. The name of this file should be your lastname.xml (for me, it would be avitabile.xml).
-Have an HTML file uses JavaScript to display the XML data in a table. 
 Have an HTML file that lets you enter data into a text field, click a button to search for a user, and uses JavaScript to display their data.
 When you are finished, your email should include the links to the page where the JavaScript is located.
 
-Your new files should be named <lastname>7a.htm, and so on. For me, it would be avitabile7a.htm and so on.
-There should be links to your new pages from your original start page.
 http://66.195.8.98/~avitabij/homework7/avitabile7a.htm
 http://66.195.8.98/~avitabij/homework7/avitabile7b.htm
 http://66.195.8.98/~avitabij/homework7/avitabile,xml
@@ -34,7 +29,19 @@ if (window.XMLHttpRequest)
 </head>
 
 <body onload="start()">
-<div id="display"></div>
+
+
+<input type="text" id="paramName">
+<input type="button" id="btnDisplay">
+
+<label id="lblfname"></label>
+<label id="lbllname"></label>
+<label id="lblemail"></label>
+<label id="lblrole"></label>
+<label id="lblbdate"></label>
+<label id="lblsign"></label>
+
+
 </body>
 
 </html>
