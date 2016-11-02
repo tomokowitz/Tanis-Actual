@@ -1,1 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<users>
+<user id="okow6543">
+	<firstname>Thomas</firstname>
+	<lastname>Okowitz</lastname>
+	<email>tomokowitz@gmail.com</email>
+	<role>admin</role>
+	<birthdate>08/18/1970</birthdate>
+	<zodiac_sign>Leo</zodiac_sign>
+</user>
+<user id="smit1234">
+	<firstname>Joseph</firstname>
+	<lastname>Smith</lastname>
+	<email>jsmitty@yahoo.com</email>
+	<role>subscriber</role>
+	<birthdate>12/24/1980</birthdate>
+	<zodiac_sign>Capricorn</zodiac_sign>
+</user>
+<user id="clin61212">
+	<firstname>Hillary</firstname>
+	<lastname>Clinton</lastname>
+	<email>damn_emailz@state.us.gov</email>
+	<role>subscriber</role>
+	<birthdate>10/26/1947</birthdate>
+	<zodiac_sign>Scorpio</zodiac_sign>
+</user>
+<user id="trum1313">
+	<firstname>Donald</firstname>
+	<lastname>Trump</lastname>
+	<email>i_m_dplorbul@groper.net</email>
+	<role>predator</role>
+	<birthdate>06/14/1946</birthdate>
+	<zodiac_sign>Gemini</zodiac_sign>
+</user>
+<user id="sand7509">
+	<firstname>Bernie</firstname>
+	<lastname>Sanders</lastname>
+	<email>feel_the_bern@commie.com</email>
+	<role>subscriber</role>
+	<birthdate>09/08/1941</birthdate>
+	<zodiac_sign>Virgo</zodiac_sign>
+</user>
+
+
+</users>
