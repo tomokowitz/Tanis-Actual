@@ -1,7 +1,8 @@
 ﻿<html>
 
 <head>
-Have an HTML file that lets you enter data into a text field, click a button to search for a user, and uses JavaScript to display their data.
+Have an HTML file that lets you enter data into a text field, click a button to search for a user, 
+and uses JavaScript to display their data.
 When you are finished, your email should include the links to the page where the JavaScript is located.
 
 http://66.195.8.98/~avitabij/homework7/avitabile7a.htm
@@ -23,8 +24,68 @@ if (window.XMLHttpRequest)
 		
 		function start()
 		{
-		
+			document.getElementById('display').innerHTML = "";
+  			var match = linearSearch();
+			if (match == -1)
+			  {
+			    alert("Sorry, no match");
+			    return;
+			  }
+			  makeData(match); 
+
 		}
+		
+		function linearSearch()
+			{ 
+			  var searchUserid = document.getElementById('userid').value;
+			  users = xmlDoc.getElementsByTagName("user"); 
+			  for (i = 0; i < users.length; i++)
+			  { 
+			     var user = users[i];
+			     thisUserid = user.getElementsByTagName("userid")[0].childNodes[0].nodeValue;
+			     if (thisUserid == searchUserid)
+					 return i;
+			  }
+			  return -1;
+			}
+			
+function makeData(match)
+{		
+  		myUser = xmlDoc.getElementsByTagName("user")[match];
+  		table = "";
+  	    table += "<TABLE BORDER=2>";
+	    table += "<TR>";
+
+	    // print heading
+        for (j = 0; j < myUser.childNodes.length; j++)
+	    {
+	    	if (myUser.childNodes[j].nodeType == 1) // if node is an element
+	    	{
+	    		// display the name of the node in a heading
+          		table += "<TH>" + myUser.childNodes[j].nodeName + "</TH>";
+          	}
+        }
+	    table += "</TR>";
+
+	    // add the data
+	    table += "<TR>";
+	    // for each child of that customer
+	    for (j = 0; j < myUser.childNodes.length; j++)
+	    {
+	       	// get a child of that node
+	       	thatProperty = myUser.childNodes[j];
+	       	if (thatProperty.nodeType == 1) 	    	
+			{
+				// get the value of the first child of that node (the text)
+           	  	table += "<TD>" + thatProperty.childNodes[0].nodeValue + "</TD>";
+           	}
+         }
+	     table += "</TR>";
+         table += "</TABLE>"; 
+         document.getElementById("display").innerHTML = table;
+
+}
+
 </script>
 </head>
 
@@ -33,13 +94,7 @@ if (window.XMLHttpRequest)
 
 <input type="text" id="paramName">
 <input type="button" id="btnDisplay">
-
-<label id="lblfname"></label>
-<label id="lbllname"></label>
-<label id="lblemail"></label>
-<label id="lblrole"></label>
-<label id="lblbdate"></label>
-<label id="lblsign"></label>
+<div id="display"onclick=""></div>
 
 
 </body>
