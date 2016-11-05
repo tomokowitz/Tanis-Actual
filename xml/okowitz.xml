@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <users>
-<user id="okow6543">
+<user> 
+	<userid>okow6543</userid>
 	<firstname>Thomas</firstname>
 	<lastname>Okowitz</lastname>
 	<email>tomokowitz@gmail.com</email>
@@ -8,7 +9,8 @@
 	<birthdate>08/18/1970</birthdate>
 	<zodiac_sign>Leo</zodiac_sign>
 </user>
-<user id="smit1234">
+<user>
+	<userid>smit1234</userid>
 	<firstname>Joseph</firstname>
 	<lastname>Smith</lastname>
 	<email>jsmitty@yahoo.com</email>
@@ -16,7 +18,8 @@
 	<birthdate>12/24/1980</birthdate>
 	<zodiac_sign>Capricorn</zodiac_sign>
 </user>
-<user id="clin61212">
+<user>
+	<userid>clin61212</userid>
 	<firstname>Hillary</firstname>
 	<lastname>Clinton</lastname>
 	<email>damn_emailz@state.us.gov</email>
@@ -24,7 +27,8 @@
 	<birthdate>10/26/1947</birthdate>
 	<zodiac_sign>Scorpio</zodiac_sign>
 </user>
-<user id="trum1313">
+<user>
+	<userid>trum1313</userid>
 	<firstname>Donald</firstname>
 	<lastname>Trump</lastname>
 	<email>i_m_dplorbul@groper.net</email>
@@ -32,7 +36,8 @@
 	<birthdate>06/14/1946</birthdate>
 	<zodiac_sign>Gemini</zodiac_sign>
 </user>
-<user id="sand7509">
+<user>
+	<userid>sand7509</userid>
 	<firstname>Bernie</firstname>
 	<lastname>Sanders</lastname>
 	<email>feel_the_bern@commie.com</email>
