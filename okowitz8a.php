@@ -9,7 +9,7 @@ Have a php file named <lastname>8a.php that will display the contents of the BAS
 
 
 <?php
-   $DBConnect = mysql_connect("66.#####", "okowitzt970", "");
+   $DBConnect = mysql_connect("localhost", "okowitzt970", "");
 	if (! $DBConnect)
 	{
   		echo "<P>Database not available";
