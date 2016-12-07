@@ -21,8 +21,7 @@ $DBConnect = mysql_connect("localhost", "okowitzt970", "");
   		echo "<P>Database not available";
 	}
 	mysql_select_db("okowitzt970");
-	$SQLstring = "INSERT INTO BASEBALL VALUES(" .
-              $teamID . ",'" . $teamName . "','" . $teamCity . $todayDate . "');";
+	$SQLstring = "INSERT INTO BASEBALL VALUES(" .  $teamID . ",'" . $teamName . "','" . $teamCity .  "');";
 	// echo $SQLstring;
 	$QueryResult = mysql_query($SQLstring);
 
