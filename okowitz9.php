@@ -1,24 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Untitled 1</title>
-</head>
-
-<body>
-
 <?php
 header("Cache-Control: post-check=1,pre-check=2");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 $teamid = $_GET["teamid"];
 $sentBack = "Not Found";
-$DBConnect = mysql_connect("localhost", "avitabij", "")
+$DBConnect = mysql_connect("localhost", "okowitzt970", "")
   Or die("Error: no database");
-$query = "SELECT  TEAM_NAME, TEAM_CITY FROM BASEBALL " .
-        "WHERE TEAM_ID = '${teamid}';";
-mysql_select_db("avitabij");
+$query = "SELECT TEAM_NAME, TEAM_CITY FROM BASEBALL " .
+        "WHERE TEAM_ID = '${teamid}'";
+mysql_select_db("okowitzt970");
 $QueryResult = mysql_query($query)
      Or die("Error: Unable to execute the query " .
             "Error code " . mysql_errno($DBConnect) .
@@ -27,15 +17,10 @@ $Row = mysql_fetch_row($QueryResult);
 if ($Row)
 {
   $sentBack=$Row[0];
-  for ($i = 1; $i <= 7; $i++)
+  for ($i = 1; $i <= 2; $i++)
   {
     $sentBack .= ";" . $Row[$i];
   }
 }
 echo $sentBack;
 ?>
-
-
-</body>
-
-</html>
