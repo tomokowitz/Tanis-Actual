@@ -12,14 +12,12 @@
 header("Cache-Control: post-check=1,pre-check=2");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
-$user = $_GET["u"];
-$passwd = $_GET["p"];
+$teamid = $_GET["teamid"];
 $sentBack = "Not Found";
 $DBConnect = mysql_connect("localhost", "avitabij", "")
   Or die("Error: no database");
-$query = "SELECT FIRSTNAME, LASTNAME, PHONE, DOB, MAJOR, ADDRESS, " .
-        "CITY, STATE FROM STUDENTS " .
-        "WHERE USERID = '${user}' AND PASSWORD = '${passwd}'";
+$query = "SELECT  TEAM_NAME, TEAM_CITY FROM BASEBALL " .
+        "WHERE TEAM_ID = '${teamid}';";
 mysql_select_db("avitabij");
 $QueryResult = mysql_query($query)
      Or die("Error: Unable to execute the query " .
