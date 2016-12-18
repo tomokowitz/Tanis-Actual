@@ -10,7 +10,9 @@
         	$(document).ready(function(){
 			
 				$("#Find").click(function(){
-
+					//var era = $("#year").val;
+					//var genre = 
+					MythosPkr(year.value,genre.value,age.value);
 				});
 				$("#lblEra").mouseover(function(){
 					$("#year").css("border", "2px solid red");});
@@ -18,6 +20,11 @@
 					$("#pic1").animate({left:'20px'},"slow",
 					function(){$("#pic1").animate({left:'0px'}, "slow")});  ;
 					});
+					
+				$(".removal").click(function(){
+     				$(this).parent().parent().remove();
+  				});
+
 			});
 				
 				var nbrYear = parseInt(strYear);
@@ -183,7 +190,7 @@
 		 						<h3><label> Click to add your preference </label></h3>
 		 					</td>
 		 					<td>
-		 						<input type="button" value="Find" onClick="MythosPkr(year.value,genre.value,age.value)">
+		 						<input type="button" value="Find" >
 		 					</td>
 
 		 				</tr>
@@ -212,18 +219,22 @@
 							<td>
 		 						<h3><label> Age Rating </label></h3>
 		 					</td>
-
+							<td></td>
 		 				</tr>
 		 				<tr>
 		 					<td>early 20th c.</td>
 							<td>Fantasy</td>
 							<td>Adult</td>
+							<td><img alt="" width="40px" name="pic1" src='Images/MythosPkr/early20FantasyAdult.jpg' style="position:absolute;"></td>
+							<td><input type="button" class="removal" value="remove">  </td>
 		 				</tr>
 
 						<tr>
 		 					<td>late 20th/21st c.</td>
 							<td>Fantasy</td>
 							<td>Youth</td>
+							<td><img alt="" width="40px" name="pic1" src='Images/MythosPkr/late20_21FantasyYouth.jpg'style="position:absolute;"></td>
+							<td><input type="button" class="removal" value="remove">  </td>
 
 		 					
 		 				</tr>
@@ -231,6 +242,8 @@
 		 					<td>early 20th c.</td>
 							<td>Weird</td>
 							<td>Adult</td>
+							<td><img alt="" width="40px" name="pic1" src='Images/MythosPkr/late20_21WeirdAdult.jpg'style="position:absolute;"></td>
+							<td><input type="button" class="removal" value="remove">  </td>
 						 		
 		 	</tr>
 		 </table>
