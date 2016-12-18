@@ -7,12 +7,26 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
       <script type="text/javascript" lang="javascript">
+      			var strEra;
+				var strGenre;
+				var strAge;
         	$(document).ready(function(){
-			
+				
 				$("#Find").click(function(){
 					//var era = $("#year").val;
 					//var genre = 
 					MythosPkr(year.value,genre.value,age.value);
+					
+					new_row = $("<tr></tr>");
+				     new_row.append($("<td></td>").text(strEra));
+				     new_row.append($("<td></td>").text(strGenre));
+				     new_row.append($("<td></td>").text(strAge));
+
+				     new_cell = $("<td class='çhampionships'></td>").text(won);
+				     new_row.append(new_cell);
+				     new_row.append($("<td></td>").html('<input type="button" class="removal" value="remove">'));
+				     $("#mythos").append(new_row);
+
 				});
 				$("#lblEra").mouseover(function(){
 					$("#year").css("border", "2px solid red");});
@@ -90,11 +104,11 @@
 			{
 				var nbrYear = parseInt(a);
 				var strEra = EraDateRange(nbrYear);
-				var strSubG = b;
-				var strAgeRtg = c;
+				var strGenre = b;
+				var strAge = c;
 				
-				var strRecImg = strEra+strSubG+strAgeRtg;
-				DisplayRec(strRecImg);
+				var strImage = strEra+strSubG+strAgeRtg;
+				//DisplayRec(strRecImg);
 				
 				
 			}
@@ -207,7 +221,7 @@
 		 		</td>
 		 	</tr>
 		 </table>
-		<table>
+		<table id="mythos">
 		 	<tr>
 		 		
 		 					<td>
@@ -219,7 +233,10 @@
 							<td>
 		 						<h3><label> Age Rating </label></h3>
 		 					</td>
+							<td><h3><label> Image </label></h3>
+								</td>
 							<td></td>
+
 		 				</tr>
 		 				<tr>
 		 					<td>early 20th c.</td>
